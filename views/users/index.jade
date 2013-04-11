@@ -1,0 +1,165 @@
+h1 Users
+
+table(class='table table-striped table-bordered table-hover')
+  caption Users
+  thead
+    tr
+      th Name
+      th Bio
+  tbody
+    - users.forEach(function(user) {
+      tr
+        td
+          a(href="/users/" + encodeURIComponent(user.username))= user.name
+        td
+          a(href="/users/" + encodeURIComponent(user.username))= user.bio
+    - });
+
+
+div(class="pagination pagination-large pagination-centered")
+  ul
+    - if (page) {
+    li
+      a(href="?page=" + (page - 1)) &laquo;
+    - } else {
+    li(class="disabled")
+      a(href="#") &laquo;
+    - }
+    //li(class="active")
+    //  a(href="#") 1
+    //li
+    //  a(href="#") 2
+    - if (! lastPage) {
+    li
+      a(href="?page=" + (page + 1)) &raquo;
+    - } else {
+    li(class="disabled")
+      a(href="#") &raquo;
+    - }
+
+
+ul(class="pager")
+  li(class="previous disabled")
+    a(href="#") &larr; Older
+  li(class="next")
+    a(href="#") Newer &rarr;
+
+
+//We will use that later
+form(class="form-horizontal")
+  div(class="control-group")
+    label(class="control-label", for="inputIcon") Email address
+    div(class="controls")
+      div(class="input-prepend")
+        span(class="add-on")
+          i(class="icon-envelope")
+        input#inputIcon(class="span2", type="text")
+
+
+
+div(class="well")
+  ul(class="nav nav-list")
+    li(class="active")
+      a(href="#")
+        i(class="icon-home icon-white")
+        span  Home
+    li
+      a(href="#")
+        i(class="icon-book")
+        span  Library
+    li
+      a(href="#")
+        i(class="icon-pencil")
+        span  Applications
+    li
+      a(href="#")
+        i(class="i")
+        span  Misc
+
+
+
+
+div(class="well")
+  div(class="btn-toolbar")
+    div(class="btn-group")
+      a(href="#", class="btn btn-large")
+        i(class="icon-align-left")
+      a(href="#", class="btn btn-large")
+        i(class="icon-align-center")
+      a(href="#", class="active btn btn-large")
+        i(class="icon-align-right")
+      a(href="#", class="btn btn-large")
+        i(class="icon-align-justify")
+
+
+
+div(class="well")
+  div(class="btn-group")
+    a(href="#", class="btn btn-primary")
+      i(class="icon-user icon-white")
+      span  User
+    a(href="#", class="btn btn-primary dropdown-toggle", data-toggle="dropdown")
+      span(class="caret")
+    ul(class="dropdown-menu")
+      li
+        a(href="#")
+          i(class="icon-pencil")
+          span  Edit
+      li
+        a(href="#")
+          i(class="icon-trash")
+          span  Delete
+      li
+        a(href="#")
+          i(class="icon-ban-circle")
+          span  Ban
+      li(class="divider")
+      li
+        a(href="#")
+          i(class="i")
+          span  Make admin
+
+
+div(class="well")
+  img(class="img-rounded", src="/img/users/flower.jpg")
+  img(class="img-circle", src="/img/users/flower.jpg")
+  img(class="img-polaroid", src="/img/users/flower.jpg")
+
+
+
+
+
+div(class="well")
+  div#accordion(class="accordion")
+    div(class="accordion-group")
+      div(class="accordion-heading")
+        a(class="accordion-toggle", data-toggle="collapse", data-parent="#accordion", href="#collapseOne") Collapsible Group Item
+      div#collapseOne(class="accordion-body collapse in")
+        div(class="accordion-inner") Anim pariatur cliche...
+    div(class="accordion-group")
+      div(class="accordion-heading")
+        a(class="accordion-toggle", data-toggle="collapse", data-parent="#accordion", href="#collapseTwo") Collapsible Group Item
+      div#collapseTwo(class="accordion-body collapse")
+        div(class="accordion-inner") Anim pariatur cliche...
+    div(class="accordion-group")
+      div(class="accordion-heading")
+        a(class="accordion-toggle", data-toggle="collapse", data-parent="#accordion", href="#collapseThree") Collapsible Group Item
+      div#collapseThree(class="accordion-body collapse")
+        div(class="accordion-inner") Anim pariatur cliche...
+
+
+
+div(class="well")
+  div#demo(class="collapse in") Anim pariatur cliche...
+  button(type="button", class="btn btn-danger", data-toggle="collapse", data-target="#demo") simple collapsible
+
+
+
+
+
+
+
+
+
+
+

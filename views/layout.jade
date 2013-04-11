@@ -1,0 +1,13 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/bootstrap.min.css', media='screen')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+  body
+    header!= partial('session/user')
+    section#main!= body
+    script(src='http://code.jquery.com/jquery.js')
+    script(src='/js/bootstrap.min.js')
